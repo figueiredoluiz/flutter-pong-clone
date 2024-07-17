@@ -34,10 +34,11 @@ flowchart TD
     J --> K{Point Scored?}
     K -- Yes --> L[Update Score]
     L --> M[Reset Ball Position]
-    K -- No --> N{Game Over?}
+    K --> N(Repeat)
     M --> N
-    N -- No --> D
-    N -- Yes --> O[End Game]
+    N --> D
+    N -.-> O{Enter Key Pressed}
+    O --> P[Reset Game]
 ```
 
 ## Prerequisites
